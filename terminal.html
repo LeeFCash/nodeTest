@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+#userInfo {
+color: yellow;
+
+}#terminalSearch {
+background-color: black;
+color: white;
+width: 10vw;
+height: 2vh;
+}#terminal {
+width: 100vw;
+height: 100vh;
+position: absolute;
+top: 0px;
+left: 0px;
+background: black;
+}#pcALL {
+position: absolute;
+left: 0px;
+top: 0px;
+width: 100vw;
+height: auto;
+}#bar {
+position: relative;
+left: 0px;
+top: 95%;
+margin-top: -8px;
+margin-left: -8px;
+width: 100%;
+height: auto;
+background-color: black;
+}#chrome {
+width: 4%;
+}#main {
+background-color: black;
+width: 80vw;
+height: 70vh;
+margin-top: 11vh;
+margin-bottom: 12vh;
+position:absolute;
+top: 3vh;
+left: 10vw;
+}#pcBackground {
+position: relative;
+top: 0%;
+left: 0%;
+width: 100vw;
+height: 92vh;
+}body {
+font-size: 2vw;
+}#aboutCreater {
+color: white;
+}#chromeSearch {
+position: relative;
+top: 3vh;
+left: 5vw;
+width: 60vw;
+}#closeMain {
+color: white;
+margin-top: -8px;
+position: relative;
+top: 0px;
+left:78vw;
+}#home1 {
+width: 4vw;
+position: absolute;
+top: 0px;
+left: 0px;
+}
+  </style>
+ </head>
+ <body>
+  <div id="terminal">
+   <span id="userInfo">
+   </span>
+   <input id="terminalSearch">
+	<p id='comendHelp' style='color: white;'>type ls to list all items in directory.<br>
+type ./(name of file) to open<br>
+type 'aboutCreater' to get info about the creator<br>
+if you have suggestions please tell the creator<br>
+	</p>
+	<p id='listAll' style='color: white;'>
+	pcALL.html<br>
+	Profile.html<br>
+	</p>
+	<p id="aboutCreater">
+	My name is Lee Cash. I am a self taught programmer/coder, who is 18 years old. If you want to contact me, my gmail is: leecash133@gmail.com.  This project/resume was created with html javascript and  css.<br>
+	</p>
+  </div>
+  <div id="pcALL">
+   <IMG src="home.png" id="home1" alt="error"/>
+   <canvas id="pcBackground"></canvas>
+    <div id="main">
+	 <p id="closeMain"> x </p>
+    <input id="chromeSearch">
+    </div>
+    <div id="bar">
+     <img id="chrome" src="chrome.jpg" alt="error" />
+    </div>
+  </div>
+  <script>
+// call terminal div
+var terminal = document.getElementById('terminal');
+// prompt for user name
+var user = window.prompt("What is your user name");
+// user search terminal
+var userInfo = document.getElementById('userInfo');
+userInfo.innerHTML = user + '/ :';
+// getting the search bar for rerminal
+var terminalSearch = document.getElementById('terminalSearch');
+// getting the help command prompt 
+var comendHelp = document.getElementById('comendHelp');
+// getting the ls command prompt
+var listAll = document.getElementById('listAll');
+//getting pcALL
+var pcALL = document.getElementById('pcALL');
+// getting main
+var main = document.getElementById('main');
+// getting chrome
+var chrome = document.getElementById('chrome');
+// getting aboutCreater
+var aboutCreater = document.getElementById('aboutCreater');
+// getting chromeSearch
+var chromeSearch = document.getElementById('chromeSearch');
+// getting closeMain
+var closeMain = document.getElementById('closeMain');
+// getting home1
+var home1 = document.getElementById('home1');
+// getting terminal commands to work
+ terminalSearch.addEventListener('input', function(){
+  localStorage.terminalSearch = terminalSearch.value;
+  //
+  if(localStorage.terminalSearch == 'help') {
+  terminal.appendChild(comendHelp);
+  } else if(localStorage.terminalSearch == 'ls') {
+    terminal.appendChild(listAll);
+  } else if(localStorage.terminalSearch == 'clear') {
+ comendHelp.remove();
+ listAll.remove();
+ aboutCreater.remove();
+  } else if(localStorage.terminalSearch == './pcALL.html') {
+    document.body.appendChild(pcALL);
+    terminal.remove();
+} else if(localStorage.terminalSearch == 'aboutCreater'){
+terminal.appendChild(aboutCreater);
+} else {
+
+}
+})
+//open chrome
+chrome.addEventListener('click', function(){
+pcALL.appendChild(main);
+})
+// return to terminal
+home1.addEventListener('click', function(){
+pcALL.remove();
+document.body.appendChild(terminal);
+})
+// search in chrome working 
+chromeSearch.addEventListener('input', function(){
+localStorage.chromeSearch = chromeSearch.value;
+if(localStorage.chromeSearch == 'youtube'){
+alert('test');
+} else {
+
+}
+})
+// close Main
+closeMain.addEventListener('click', function(){
+main.remove();
+})
+ // keep at bottem
+ main.remove();
+ pcALL.remove();
+ comendHelp.remove();
+ listAll.remove();
+ aboutCreater.remove();
+// terminal refresh 
+ 
+ setTimeout(terminalDown,60000,'');
+ function terminalDown(){
+ var i = 0;
+ while(i == 0){
+userInfo.remove();
+terminalSearch.remove();
+terminal.appendChild(userInfo);
+terminal.appendChild(terminalSearch);
+i++
+ }
+ var i = 0;
+ setTimeout(terminalDown,60000,'');
+ }
+  </script>
+ </body>
+</html>
