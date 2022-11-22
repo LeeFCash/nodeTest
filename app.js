@@ -5,4 +5,4 @@ app.use('/public', express.static(path.join(__dirname, 'main')));
 app.get('/',(req,res)=>{
  res.sendFile(path.join(__dirname,'main','terminal.html'));
 });
-app.listen(3000);
+app.listen(5000);
