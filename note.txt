@@ -1,3 +1,24 @@
 info 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 nodemon - is a devDependencies that allows the node server to restart automatically when you edit files 
+ejs - is what allows me to use the backend stuff and front end stuff together
+
+{
+const express = require('express');
+const { dirname } = require('path');
+const path = require('path');
+const app = express();
+
+//app.use('/public', express.static(path.join(__dirname, 'main')));
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.get('/',(req,res)=>{
+// res.sendFile(path.join(__dirname,'main','terminal.html'));
+res.render("terminal");
+});
+app.listen(5000);
+
+with dependencies (ejs and express)
+better to get files this way because you can use the backend stuff and front end stuff together 
+}
