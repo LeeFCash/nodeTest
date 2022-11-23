@@ -1,0 +1,3 @@
+info 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+nodemon - is a devDependencies that allows the node server to restart automatically when you edit files 
