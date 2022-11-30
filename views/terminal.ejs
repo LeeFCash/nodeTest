@@ -90,17 +90,6 @@ if you have suggestions please tell the creator<br>
 	My name is Lee Cash. I am a self taught programmer/coder, who is 18 years old. If you want to contact me, my gmail is: leecash133@gmail.com.  This project/resume was created with html javascript and  css.<br>
 	</p>
   </div>
-  <div id="pcALL">
-   <IMG src="home.png" id="home1" alt="error"/>
-   <canvas id="pcBackground"></canvas>
-    <div id="main">
-	 <p id="closeMain"> x </p>
-    <input id="chromeSearch">
-    </div>
-    <div id="bar">
-     <img id="chrome" src="chrome.jpg" alt="error" />
-    </div>
-  </div>
   <script>
 // call terminal div
 var terminal = document.getElementById('terminal');
@@ -115,20 +104,10 @@ var terminalSearch = document.getElementById('terminalSearch');
 var comendHelp = document.getElementById('comendHelp');
 // getting the ls command prompt
 var listAll = document.getElementById('listAll');
-//getting pcALL
-var pcALL = document.getElementById('pcALL');
-// getting main
-var main = document.getElementById('main');
-// getting chrome
-var chrome = document.getElementById('chrome');
 // getting aboutCreater
 var aboutCreater = document.getElementById('aboutCreater');
 // getting chromeSearch
 var chromeSearch = document.getElementById('chromeSearch');
-// getting closeMain
-var closeMain = document.getElementById('closeMain');
-// getting home1
-var home1 = document.getElementById('home1');
 // getting terminal commands to work
  terminalSearch.addEventListener('input', function(){
   localStorage.terminalSearch = terminalSearch.value;
@@ -142,39 +121,20 @@ var home1 = document.getElementById('home1');
  listAll.remove();
  aboutCreater.remove();
   } else if(localStorage.terminalSearch == './pcALL.html') {
-    document.body.appendChild(pcALL);
-    terminal.remove();
+    //document.body.appendChild(pcALL);
+    //terminal.remove();
 } else if(localStorage.terminalSearch == 'aboutCreater'){
 terminal.appendChild(aboutCreater);
 } else {
 
 }
 })
-//open chrome
-chrome.addEventListener('click', function(){
-pcALL.appendChild(main);
-})
-// return to terminal
+/* return to terminal
 home1.addEventListener('click', function(){
 pcALL.remove();
 document.body.appendChild(terminal);
-})
-// search in chrome working 
-chromeSearch.addEventListener('input', function(){
-localStorage.chromeSearch = chromeSearch.value;
-if(localStorage.chromeSearch == 'youtube'){
-alert('test');
-} else {
-
-}
-})
-// close Main
-closeMain.addEventListener('click', function(){
-main.remove();
-})
+})*/
  // keep at bottem
- main.remove();
- pcALL.remove();
  comendHelp.remove();
  listAll.remove();
  aboutCreater.remove();
