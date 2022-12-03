@@ -12,7 +12,12 @@ app.set("view engine", "ejs");
 app.use('/pcALL', pcALL);
 // show terminal 
 app.get('/',(req,res)=>{
+const testThis = [{
+    title: 'this is a test from app js',
+    createdAt: new Date(),
+    description: 'this is a test'
+}]
 // res.sendFile(path.join(__dirname,'main','terminal.html'));
-res.render("terminal");
+res.render("terminal", { testThis: testThis });
 });
 app.listen(5000);

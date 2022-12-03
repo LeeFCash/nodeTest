@@ -3,7 +3,12 @@ info
 nodemon - is a devDependencies that allows the node server to restart automatically when you edit files 
 ejs - is what allows me to use the backend stuff and front end stuff together
 
-{
+use bootstrap = {
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+}
+
+make server = {
 const express = require('express');
 const { dirname } = require('path');
 const path = require('path');
