@@ -21,4 +21,4 @@ const testThis = [{
 // res.sendFile(path.join(__dirname,'main','terminal.html'));
 res.render("terminal", { testThis: testThis });
 });
-app.listen(5000);
+app.listen(3000);
