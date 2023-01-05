@@ -11,6 +11,8 @@ app.set("view engine", "ejs");
 
 // url is /pcALL use this to go to page / making url
 app.use('/pcALL', route1);
+// adds a path way for the html file to det the css file
+app.use(express.static(path.join(__dirname, 'views')));
 // show terminal 
 app.get('/',(req,res)=>{
 const testThis = [{
@@ -19,6 +21,6 @@ const testThis = [{
     description: 'this is a test'
 }]
 // res.sendFile(path.join(__dirname,'main','terminal.html'));
-res.render("terminal", { testThis: testThis });
+res.render("test", { testThis: testThis });
 });
 app.listen(3000);
