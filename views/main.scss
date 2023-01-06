@@ -1,8 +1,12 @@
+@mixin color($color) {
+    color: $color;
+}
+
 $p: 20px;
 
 #what {
-    color: red;
-    font-size: $p;
+    @include color(red);
+    font-size: 20px;
     position: absolute;
     left: $p;
 }
