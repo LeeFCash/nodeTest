@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "compile-auto": "sass --watch /workspaces/nodeTest/views/main.scss /workspaces/nodeTest/views/style.css",
     "compile": "sass /workspaces/nodeTest/views/main.scss /workspaces/nodeTest/views/style.css",
     "devStart": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
